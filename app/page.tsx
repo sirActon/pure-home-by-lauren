@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, MapPin } from "lucide-react";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/Button";
@@ -171,6 +171,22 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* NEIGHBORHOODS STRIP */}
+      <section className="bg-surface-inverse">
+        <div className="container-px flex flex-wrap items-center justify-center gap-x-5 gap-y-3 py-7">
+          <span className="mr-1 flex items-center gap-2 text-accent-primary">
+            <MapPin size={15} />
+            <span className="eyebrow">Serving Greater Columbus</span>
+          </span>
+          {site.serviceAreaCities.map((city) => (
+            <span key={city} className="flex items-center gap-2.5">
+              <span className="h-1 w-1 rounded-full bg-accent-primary/60" aria-hidden />
+              <span className="text-[13px] text-fg-inverse">{city}</span>
+            </span>
+          ))}
         </div>
       </section>
 
